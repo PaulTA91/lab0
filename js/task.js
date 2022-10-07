@@ -52,7 +52,7 @@ console.log(lando);
 
 console.log("Task B");
 
-const myArray = [1, 3, 1, 7, 9];
+var myArray = [1, 3, 1, 7, 9];
 console.log(myArray);
 console.log(myArray[1]);
 console.log(myArray.length);
@@ -71,3 +71,32 @@ console.log(myArray);
 var index = myArray.indexOf(9);
 myArray.splice(index, 1);
 console.log(myArray);
+myArray = [1, 3, 1, 7, 9];
+let filtered = myArray.filter((c) => c < 6);
+console.log(filtered);
+console.log(myArray);
+let squared = myArray.map((c) => c ** 2); //iterates through array and applies function to each item?
+console.log(squared);
+let question4 = myArray.map((x) => x + 3);
+console.log(question4);
+let pairs = myArray.map((x) => [x, String.fromCharCode(x + 64)]); //returns an array of arrays
+console.log(pairs);
+let max = myArray.reduce(function (a, b) {
+  return Math.max(a, b);
+});
+console.log(max);
+let pairs2 = myArray.flatMap((x) => [x, String.fromCharCode(x + 64)]); //same result as .map() but flattened into a single array
+console.log(pairs2);
+console.log("Challenge");
+let coords = [
+  [0, 1],
+  [3, 4],
+  [-5, 12],
+  [2, 2],
+];
+
+let distances = coords.reduce(function distance(x1, y1, x2, y2) {
+  return Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
+});
+
+console.log(distances);
